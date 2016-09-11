@@ -2,32 +2,38 @@
 <html>
 <head>
 	<title>CHATTY!</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="styles.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
 <body id="body">
- <a class="navbar-brand" href="#">Chatty JMOB!</a>
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input id="userInput" type="text" class="form-control" placeholder="Enter message">
-  </div>
-  <button id="clearBtn" stype="submit" class="btn btn-default">Clear message board</button>
-  <div class="col-sm-3">
-  <label>Dark<input id="darkBtn" type="checkbox" data-group-cls="btn-group-justified"></label>
-</div><br>
-<div class="col-sm-3">
-  <label>Large<input id="largeBtn" type="checkbox" data-group-cls="btn-group-justified"></label>
+  <div id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+      <a class="navbar-brand" href="#">Chatty JMOB!</a>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input id="userInput" type="text" class="form-control" placeholder="Enter message">
+          </div>
+            <button id="clearBtn" stype="submit" class="btn btn-default">Clear message board</button>
+          <div class="col-sm-3">
+            <label>Dark<input id="darkBtn" type="checkbox" data-group-cls="btn-group-justified"></label>
+          </div><br>
+          <div class="col-sm-3">
+            <label>Large<input id="largeBtn" type="checkbox" data-group-cls="btn-group-justified"></label>
+          </div>
+        </form>
+       </div>
+    </nav>
+  </div><br>
+<div class="form-group">
+  <label for="comment">Messages:</label>
+  <textarea class="form-control" rows="50" id="comment"></textarea>
 </div>
-</form>
-<div id="output">
 
-
-
-	
-</div>
 </body>
-<script type="text/javascript" src="callMessageIIFE.js"></script>
-<script type="text/javascript" src="domHandler.js"></script>
-<script type="text/javascript" src="deleteIIFE.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="callMessageIIFE.js"></script>
+      <script type="text/javascript" src="domHandler.js"></script>
+      <script type="text/javascript" src="deleteIIFE.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>

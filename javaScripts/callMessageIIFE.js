@@ -21,7 +21,7 @@ var Chatty = (function() {
 
     	
     		outputMessage += "<div>";
-        		outputMessage += `<p> ${storedMessage.message}<button class='delete'>Delete Message</button></p>`;
+        	outputMessage += `<p> ${storedMessage.message}<button class='delete'>Delete Message</button></p>`;
       		outputMessage += "</div>";
       	
   		};

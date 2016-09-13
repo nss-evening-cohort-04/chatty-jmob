@@ -9,3 +9,19 @@ body {
 	background-color: silver;
 	
 }
+
+.makeDark{
+	background-color: black;
+}
+
+.textDark{
+	color: white;
+}
+
+.makeLarge{
+	font-size: 2em;
+}
+
+.buttonDark{
+	color: black;
+}

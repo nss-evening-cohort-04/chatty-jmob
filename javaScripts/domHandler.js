@@ -1,22 +1,39 @@
-var inputMssg = document.getElementById("userInput");
-var clearButton = document.getElementById("clearBtn");
-var darkButton = document.getElementById("darkBtn");
-var largeButton = document.getElementById("largeBtn");
-var outputMessage = document.getElementById("comment2");
+var Chatty = (function(newChatty) {
 
-function printMessage(){
-	var userMssg = inputMssg.value;
-	outputMessage.innerHTML += "<div>" + userMssg + "<button class='delete'>Delete Message</button></div>";
-}
+	var inputMssg = document.getElementById("userInput");
+	var clearButton = document.getElementById("clearBtn");
+	var darkButton = document.getElementById("darkBtn");
+	var largeButton = document.getElementById("largeBtn");
+	var outputMessage = document.getElementById("comment2");
 
-function enterKeyPressed(keypress){
-	if (keypress.which === 13) {
-	keypress.preventDefault();
-		printMessage();
-		inputMssg.value = "";
+	newChatty.printMessage = function(){
+		var userMssg = inputMssg.value;
+		outputMessage.innerHTML += "<div>" + userMssg + "<button id='delete'>Delete Message</button></div>";
 	}
-}
 
-// darkButton.addEventListener("click", someFunction);
-// largeButton.addEventListener("click", anotherFunction)
-document.addEventListener("keypress", enterKeyPressed);
+	newChatty.enterKeyPressed = function(keypress){
+		if (keypress.which === 13) {
+		keypress.preventDefault();
+			newChatty.printMessage();
+			inputMssg.value = "";
+		}
+	}
+
+	newChatty.addDark = function(){
+		var element = document.getElementById("body");
+		element.classList.toggle("makeDark");
+	}
+
+	newChatty.addLarge = function(){
+		var element = document.getElementById("comment2");
+		element.classList.toggle("makeLarge");
+	}
+
+	darkButton.addEventListener("click", newChatty.addDark);
+	largeButton.addEventListener("click", newChatty.addLarge);
+	darkButton.addEventListener("click", newChatty.addDark);
+	document.addEventListener("keypress", newChatty.enterKeyPressed);
+
+	return newChatty;
+
+})(Chatty || {})

@@ -6,8 +6,7 @@ body {
  }
 
 .container {
-	background-color: silver;
-	
+	background-color: gold;	
 }
 
 .makeDark{
@@ -24,4 +23,29 @@ body {
 
 .buttonDark{
 	color: black;
+}
+
+.delete {
+	float: right;
+	background-color: gold;
+}
+
+div.container {
+	width: 100%;
+}
+
+a.navbar-brand {
+	font-size: 3em;
+}
+
+input#userInput.form-control {
+	width: 250%;
+}
+
+button#clearBtn.btn.btn-default{
+	margin-left: 300px;
+}
+
+div.form-group {
+
 }

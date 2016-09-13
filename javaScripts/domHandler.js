@@ -8,7 +8,7 @@ var Chatty = (function(newChatty) {
 
 	newChatty.printMessage = function(){
 		var userMssg = inputMssg.value;
-		outputMessage.innerHTML += "<div>" + userMssg + "<button id='delete'>Delete Message</button></div>";
+		outputMessage.innerHTML += "<div>" + userMssg + "<p><button class='delete' >Delete Message</button></div></p>";
 	}
 
 	newChatty.enterKeyPressed = function(keypress){
@@ -22,6 +22,8 @@ var Chatty = (function(newChatty) {
 	newChatty.addDark = function(){
 		var element = document.getElementById("body");
 		element.classList.toggle("makeDark");
+		var div = document.getElementById("formGroup")
+        div.classList.toggle("textDark");
 	}
 
 	newChatty.addLarge = function(){

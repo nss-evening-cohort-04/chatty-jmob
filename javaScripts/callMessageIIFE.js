@@ -16,8 +16,8 @@ var Chatty = (function() {
 		for (var i = 0; i < messageData.message.length; i++) {
     		storedMessage = messageData.message[i];
     		console.log(storedMessage);
-        	var insideDiv = `<p> ${storedMessage.message}<button id='delete' class='delete'>Delete Message</button></p>`;
-      		contentEl.innerHTML += "<div>"+ insideDiv +"</div>";
+        	var insideDiv = `${storedMessage.message}<button class='delete'>Delete Message</button>`;
+      		contentEl.innerHTML += "<div class='mssg'>"+ insideDiv +"</div>";
       		deleteListenerEvent();
   		};
 

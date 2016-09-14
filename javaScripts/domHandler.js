@@ -20,7 +20,7 @@ var Chatty = (function(newChatty) {
 
 	newChatty.printMessage = function(){
 		var userMssg = inputMssg.value;
-		outputMessage.innerHTML += "<div>" + userMssg + "<button class='delete' >Delete Message</button></div>";
+		outputMessage.innerHTML += "<div class='mssg'>" + userMssg + "<button class='delete' >Delete Message</button></div>";
 		deleteListenerEvent();
 	}
 	

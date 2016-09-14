@@ -18,9 +18,22 @@ var Chatty = (function() {
     		console.log(storedMessage);
         	var insideDiv = `<p> ${storedMessage.message}<button id='delete' class='delete'>Delete Message</button></p>`;
       		contentEl.innerHTML += "<div>"+ insideDiv +"</div>";
+      		deleteListenerEvent();
   		};
 
   		// contentEl.innerHTML = outputMessage;
+	}
+
+	function deleteMssg(event){
+	var parentDiv = this.parentNode;
+	this.parentNode.parentNode.removeChild(parentDiv);
+	}
+
+	function deleteListenerEvent(){
+		var deleteButton = document.getElementsByClassName("delete");
+		for (var i = 0; i < deleteButton.length; i+=1) {
+			deleteButton[i].addEventListener("click", deleteMssg);
+		}
 	}
 
 	function executeThisCodeWhenChunksArrive () {

@@ -7,6 +7,9 @@ var Chatty = (function() {
 	function executeThisCodeWhenChunksArrive () {
 	}
 
+	// var privateArray = [];
+	// var counter = 0;
+
 	function executeThisCodeAfterFileLoaded () {
 	  console.log("executeThisCodeAfterFileLoaded it loaded");
   	  var messageData = JSON.parse(this.responseText);
@@ -25,7 +28,11 @@ var Chatty = (function() {
       		outputMessage += "</div>";
       	
   		};
-
+  		
+  		// for (var i = 0; i < messageData.length; i++) {
+  		// 	Chatty.fillArray(messageData.message[i]);
+  		// }
+  		
   		contentEl.innerHTML = outputMessage;
 	}
 
@@ -38,5 +45,19 @@ var Chatty = (function() {
 	myRequest.open("GET", "javaScripts/messages.json");
 	myRequest.send();
 	
-	return {};
+	return {
+
+	// 	fillArray: function(Frommessage){
+	// 		var inputStr = document.getElementById("userInput").value;
+		
+	// 		var message = {id:counter,message:inputStr};
+	// 		privateArray.push(message);
+	// 		privateArray.push(Frommessage);
+	// 		counter++
+	// 		console.log(privateArray);
+	// }
+
+
+
+	};
 })()

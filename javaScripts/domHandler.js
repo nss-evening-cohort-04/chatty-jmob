@@ -1,10 +1,21 @@
 var Chatty = (function(newChatty) {
 
+	var privateArray = [];
+	var counter = 0;
+
 	var inputMssg = document.getElementById("userInput");
 	var clearButton = document.getElementById("clearBtn");
 	var darkButton = document.getElementById("darkBtn");
 	var largeButton = document.getElementById("largeBtn");
 	var outputMessage = document.getElementById("comment2");
+
+	newChatty.fillArray = function(){
+			var inputStr = document.getElementById("userInput").value;
+			var message = {id:counter,message:inputStr};
+			privateArray.push(message);
+			counter++
+			console.log(privateArray);
+	}
 
 	newChatty.printMessage = function(){
 		var userMssg = inputMssg.value;
@@ -13,8 +24,11 @@ var Chatty = (function(newChatty) {
 
 	newChatty.enterKeyPressed = function(keypress){
 		if (keypress.which === 13) {
-		keypress.preventDefault();
+			keypress.preventDefault();
 			newChatty.printMessage();
+		 	var inputStr = document.getElementById("userInput").value;
+			var message = {id:counter,message:inputStr};
+			newChatty.fillArray(message);
 			inputMssg.value = "";
 		}
 	}
@@ -31,9 +45,13 @@ var Chatty = (function(newChatty) {
 		element.classList.toggle("makeLarge");
 	}
 
+	newChatty.clearAll = function(){
+		outputMessage.innerHTML = "";
+	}
+
 	darkButton.addEventListener("click", newChatty.addDark);
 	largeButton.addEventListener("click", newChatty.addLarge);
-	darkButton.addEventListener("click", newChatty.addDark);
+	clearButton.addEventListener('click', newChatty.clearAll);
 	document.addEventListener("keypress", newChatty.enterKeyPressed);
 
 	return newChatty;

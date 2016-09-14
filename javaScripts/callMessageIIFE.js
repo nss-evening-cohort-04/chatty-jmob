@@ -49,5 +49,19 @@ var Chatty = (function() {
 	myRequest.open("GET", "javaScripts/messages.json");
 	myRequest.send();
 	
-	return {};
+	return {
+
+	// 	fillArray: function(Frommessage){
+	// 		var inputStr = document.getElementById("userInput").value;
+		
+	// 		var message = {id:counter,message:inputStr};
+	// 		privateArray.push(message);
+	// 		privateArray.push(Frommessage);
+	// 		counter++
+	// 		console.log(privateArray);
+	// }
+
+
+
+	};
 })()

@@ -8,6 +8,7 @@ var Chatty = (function(newChatty) {
 	var darkButton = document.getElementById("darkBtn");
 	var largeButton = document.getElementById("largeBtn");
 	var outputMessage = document.getElementById("comment2");
+	var deleteButton = document.getElementsByClassName("delete");
 
 	newChatty.fillArray = function(){
 			var inputStr = document.getElementById("userInput").value;
@@ -19,8 +20,10 @@ var Chatty = (function(newChatty) {
 
 	newChatty.printMessage = function(){
 		var userMssg = inputMssg.value;
-		outputMessage.innerHTML += "<div>" + userMssg + "<p><button class='delete' >Delete Message</button></div></p>";
+		outputMessage.innerHTML += "<div>" + userMssg + "<button class='delete' >Delete Message</button></div>";
+		deleteListenerEvent();
 	}
+	
 
 	newChatty.enterKeyPressed = function(keypress){
 		if (keypress.which === 13) {
@@ -45,13 +48,25 @@ var Chatty = (function(newChatty) {
 		element.classList.toggle("makeLarge");
 	}
 
-	newChatty.clearAll = function(){
-		outputMessage.innerHTML = "";
+=======
+	function deleteMssg(event){
+	var parentDiv = this.parentNode;
+	this.parentNode.parentNode.removeChild(parentDiv);
 	}
 
+	function deleteListenerEvent(){
+		for (var i = 0; i < deleteButton.length; i+=1) {
+			deleteButton[i].addEventListener("click", deleteMssg);
+		}
+	}
+
+	newChatty.clearAll = function(){
+        outputMessage.innerHTML = "";
+    }
 	darkButton.addEventListener("click", newChatty.addDark);
 	largeButton.addEventListener("click", newChatty.addLarge);
-	clearButton.addEventListener('click', newChatty.clearAll);
+	clearButton.addEventListener("click", newChatty.clearAll);
+>>>>>>> master
 	document.addEventListener("keypress", newChatty.enterKeyPressed);
 
 	return newChatty;

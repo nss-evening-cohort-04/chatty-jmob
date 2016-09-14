@@ -48,7 +48,6 @@ var Chatty = (function(newChatty) {
 		element.classList.toggle("makeLarge");
 	}
 
-=======
 	function deleteMssg(event){
 	var parentDiv = this.parentNode;
 	this.parentNode.parentNode.removeChild(parentDiv);
@@ -66,7 +65,6 @@ var Chatty = (function(newChatty) {
 	darkButton.addEventListener("click", newChatty.addDark);
 	largeButton.addEventListener("click", newChatty.addLarge);
 	clearButton.addEventListener("click", newChatty.clearAll);
->>>>>>> master
 	document.addEventListener("keypress", newChatty.enterKeyPressed);
 
 	return newChatty;

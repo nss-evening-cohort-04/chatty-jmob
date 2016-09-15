@@ -11,6 +11,9 @@ body {
 
 .makeDark{
 	background-color: black;
+	background-image: url("https://c1.staticflickr.com/9/8382/8494622392_d5e5d10abb_b.jpg");
+	background-repeat-y: no-repeat;
+	background-size: 100%;
 }
 
 .textDark{

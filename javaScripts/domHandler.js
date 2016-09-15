@@ -10,6 +10,8 @@ var Chatty = (function(newChatty) {
 	var outputMessage = document.getElementById("comment2");
 	var deleteButton = document.getElementsByClassName("delete");
 
+	// var inputStr = document.getElementById("userInput").value;
+	// .fillArray(inputStr);
 	newChatty.fillArray = function(){
 			var inputStr = document.getElementById("userInput").value;
 			var message = {id:counter,message:inputStr};
@@ -29,7 +31,7 @@ var Chatty = (function(newChatty) {
 		if (keypress.which === 13) {
 			keypress.preventDefault();
 			newChatty.printMessage();
-		 	var inputStr = document.getElementById("userInput").value;
+		  	var inputStr = document.getElementById("userInput").value;
 			var message = {id:counter,message:inputStr};
 			newChatty.fillArray(message);
 			inputMssg.value = "";

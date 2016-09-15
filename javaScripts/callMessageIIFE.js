@@ -4,6 +4,9 @@ var Chatty = (function() {
 	  console.log("An error occurred while transferring");
 	}
 
+	var privateArray = [];
+	var counter = 0;
+
 	function executeThisCodeAfterFileLoaded () {
 		console.log("executeThisCodeAfterFileLoaded it loaded");
   	  var messageData = JSON.parse(this.responseText);
@@ -15,13 +18,26 @@ var Chatty = (function() {
 
 		for (var i = 0; i < messageData.message.length; i++) {
     		storedMessage = messageData.message[i];
-    		console.log(storedMessage);
+    		//console.log(storedMessage);
         	var insideDiv = `${storedMessage.message}<button class='delete'>Delete Message</button>`;
       		contentEl.innerHTML += "<div class='mssg'>"+ insideDiv +"</div>";
       		deleteListenerEvent();
+      		fillArray(storedMessage);
   		};
 
+  		// for (var i = 0; i < messageData.length; i++) {
+  		//  	Chatty.fillArray(messageData.message[i]);
+  		// }
   		// contentEl.innerHTML = outputMessage;
+	}
+
+	function fillArray(Frommessage){
+			var inputStr = document.getElementById("userInput").value;
+			var message = {id:counter,message:inputStr};
+			privateArray.push(message);
+			privateArray.push(Frommessage);
+			counter++
+			console.log(privateArray);
 	}
 
 	function deleteMssg(event){
